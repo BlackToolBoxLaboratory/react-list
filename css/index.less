@@ -1,0 +1,19 @@
+.btb-list {
+  .list_layer {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .layer-0 {
+    .list_layer {
+      height: 0;
+      overflow: hidden;
+    }
+    .item-active > .item_sublist > .list_layer {
+      height: unset;
+    }
+  }
+  .item_content {
+    cursor: pointer;
+  }
+}
