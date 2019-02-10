@@ -1,3 +1,16 @@
+@D-layer: 7;
+@D-offset: 1rem;
+
+.layerLoop (@counter, @offset) when (@counter >= 0) {
+  .layer-@{counter} {
+    & > .layer_item > .item_content {
+      padding-left: (@counter * @offset);
+    };
+  };
+
+  .layerLoop(@counter - 1, @offset);
+}
+
 .btb-list {
   .list_layer {
     margin: 0;
@@ -16,4 +29,5 @@
   .item_content {
     cursor: pointer;
   }
+  .layerLoop(@D-layer, @D-offset);
 }

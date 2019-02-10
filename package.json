@@ -33,7 +33,7 @@
     "cleanDir": "rimraf lib dist es",
     "lessBuildup": "gulp cssBuildup",
     "build": "npm run lint && node ./script/build.js && npm run lessBuildup",
-    "lint": "eslint --fix module/*.jsx",
+    "lint": "eslint --fix module/*.js",
     "prepare": "npm run cleanDir && npm run build",
     "backup": "gulp backup"
   },
@@ -43,7 +43,6 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
-    "@babel/plugin-external-helpers": "^7.2.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
@@ -59,9 +58,8 @@
     "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-less": "^4.0.1",
-    "gulp-less-to-scss": "0.0.9",
     "jest": "^23.6.0",
-    "react-test-renderer": "^16.7.0",
+    "react-test-renderer": "^16.8.1",
     "rimraf": "^2.6.3",
     "rollup": "^1.0.2",
     "rollup-plugin-babel": "^4.2.0",
@@ -72,8 +70,8 @@
   },
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   },
   "directories": {
     "lib": "lib"

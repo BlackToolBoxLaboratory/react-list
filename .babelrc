@@ -26,10 +26,7 @@
             "modules": false
           }
         ]
-      ],
-      "plugins": [
-        "@babel/plugin-external-helpers"
-      ]  
+      ]
     },
     "test": {
       "plugins": [

@@ -1,6 +1,5 @@
 const gulp = require("gulp");
 const less = require('gulp-less');
-const less2scss = require('gulp-less-to-scss');
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css'); 
@@ -34,16 +33,12 @@ gulp.task("copy2codebase", function(done) {
 
 gulp.task("lessTranslation", function(done){
   gulp.src(["css/*.less"])
-    .pipe(autoprefixer())
     .pipe(less())
+    .pipe(autoprefixer())
     .pipe(gulp.dest("./css/")) // index.css
     .pipe(concat('index.min.css'))
     .pipe(cleanCss())
-    .pipe(gulp.dest("./css/")); // index.css
-  gulp.src(["css/*.less"])
-    .pipe(autoprefixer())
-    .pipe(less2scss())
-    .pipe(gulp.dest("./css/")); // index.scss
+    .pipe(gulp.dest("./css/")); // index.min.css
   done();
 });
 
