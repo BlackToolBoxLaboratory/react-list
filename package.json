@@ -1,0 +1,56 @@
+{
+  "name": "@blacktoolbox/react-list",
+  "packageName": "btblab-vue-list",
+  "version": "2.0.0",
+  "description": "List / Menu maker based on React",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "jsnext:main": "esm/index.js",
+  "scripts": {
+    "cleanModules": "rimraf node_modules",
+    "cleanDir": "rimraf umd lib esm",
+    "build-components": "rollup -c",
+    "build": "npm run lint && npm run build-components",
+    "lint": "eslint --fix --ext .js,.jsx module",
+    "prepare": "npm run cleanDir && npm run build",
+    "backup": "gulp backup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackToolBoxLaboratory/react-list.git"
+  },
+  "author": {
+    "name": "Van Noel",
+    "email": "vannoel0628@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlackToolBoxLaboratory/react-list/issues"
+  },
+  "homepage": "https://github.com/BlackToolBoxLaboratory/react-list",
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@rollup/plugin-babel": "^5.0.3",
+    "autoprefixer": "^9.8.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-react": "^7.20.0",
+    "gulp": "^4.0.2",
+    "less": "^3.11.3",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.13.1",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-postcss": "^3.1.2",
+    "rollup-plugin-terser": "^6.1.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
+  }
+}
