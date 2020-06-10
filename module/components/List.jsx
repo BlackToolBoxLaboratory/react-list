@@ -8,7 +8,8 @@ import { EnvContext, EventContext } from '../utils/useContext.js';
 const List = (props) => {
   const env = {
     state_activeID : useActiveState(),
-    collapseEnable : props.collapseEnable || false
+    collapseEnable : props.collapseEnable || false,
+    slotObj        : props.slotObj || {}
   };
   const event = {
     clickEntry : (entry) => {

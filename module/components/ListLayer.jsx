@@ -80,7 +80,7 @@ const ListLayer = (props) => {
               <li className="layer_container" style={getStyle(props.styleObj, ['layer_container'])} key={entry.id}>
                 <div className={classnames('container_entry', `entry-${entry.id}`, {'entry-collapsable' : env.collapseEnable}, {'entry-active' : env.state_activeID.value === entry.id})} style={{'paddingLeft' : `${props.iteration}rem`, ...getStyle(props.styleObj, ['container_entry', `entry-${entry.id}`, env.collapseEnable && 'entry-collapsable'||''])}} onClick={() => {_toggleCollapsed(entry);}}>
                   <div className="entry_title" style={getStyle(props.styleObj, ['entry_title'])}>
-                    {(entry.slot)? (entry.slot) : (entry.title)}
+                    {(env.slotObj[entry.id])? (env.slotObj[entry.id]) : (entry.title)}
                   </div>
                   {
                     (env.collapseEnable)? 
@@ -106,7 +106,7 @@ const ListLayer = (props) => {
               <li className="layer_container" style={getStyle(props.styleObj, ['layer_container'])} key={entry.id}>
                 <div className={classnames('container_entry', `entry-${entry.id}`, {'entry-active' : env.state_activeID.value === entry.id})} style={{'paddingLeft' : `${props.iteration}rem`, ...getStyle(props.styleObj, ['container_entry', `entry-${entry.id}`, (env.state_activeID.value === entry.id)? 'entry-active':''])}} onClick={() => {event.clickEntry(entry);}}>
                   <div className="entry_title" style={getStyle(props.styleObj, ['entry_title'])}>
-                    {(entry.slot)? (entry.slot) : (entry.title)}
+                    {(env.slotObj[entry.id])? (env.slotObj[entry.id]) : (entry.title)}
                   </div>
                 </div>
               </li>

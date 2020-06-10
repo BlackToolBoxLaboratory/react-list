@@ -1,3 +1,15 @@
+## v2.1.1
+
+> Jun, 10, 2020
+
+- **Issue**: Add missing files.
+
+## v2.1.0
+
+> Jun, 10, 2020
+
+- **Minor**: Add Slot for customized list / menu item.
+
 ## v2.0.0
 
 > Jun, 8, 2020
