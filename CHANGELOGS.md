@@ -1,3 +1,9 @@
+## v2.1.2
+
+> Jun, 11, 2020
+
+- **Issue**: Fix bug of activeID update.
+
 ## v2.1.1
 
 > Jun, 10, 2020

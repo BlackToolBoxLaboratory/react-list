@@ -28,12 +28,14 @@ const List = (props) => {
   useEffect(() => {
     env.state_activeID.onChange(props.activeID || props.defaultActiveID || '');
   }, []);
+  
   useEffect(() => {
     if (typeof props.activeID != 'undefined')
     {
-      env.state_activeID.onChange(props.activeID);
+      if (env.state_activeID.value !== props.activeID)
+        env.state_activeID.onChange(props.activeID);
     }
-  }, [env.state_activeID.value]);
+  });
 
   return (
     <EnvContext.Provider value={env}>
