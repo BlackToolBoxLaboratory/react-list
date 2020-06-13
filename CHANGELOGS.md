@@ -1,3 +1,9 @@
+## v2.1.3
+
+> Jun, 13, 2020
+
+- **Issue**: Fix typo of packagename and enhance package flow.
+
 ## v2.1.2
 
 > Jun, 11, 2020

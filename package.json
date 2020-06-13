@@ -1,7 +1,7 @@
 {
   "name": "@blacktoolbox/react-list",
-  "packageName": "btblab-vue-list",
-  "version": "2.1.2",
+  "packageName": "btblab-react-list",
+  "version": "2.1.3",
   "description": "List / Menu maker based on React",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -14,8 +14,7 @@
   ],
   "scripts": {
     "cleanModules": "rimraf node_modules",
-    "build-components": "rollup -c",
-    "build": "npm run lint && npm run build-components",
+    "build": "rollup -c",
     "lint": "eslint --fix --ext .js,.jsx module",
     "prepare": "npm run build",
     "backup": "gulp backup"

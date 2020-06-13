@@ -11,12 +11,11 @@ gulp.task('backup', function(done){
     '.eslintrc.js',
     '.gitignore',
     'LICENSE',
-    'CHANGELOG.md',
+    'CHANGELOGS.md',
     'README.md',
     'package.json',
     'package-lock.json',
     'rollup.config.js',
-    'postcss.config.js',
     'gulpfile.js'
   ])
     .pipe(gulp.dest(path_backup))

@@ -72,21 +72,21 @@ const ListLayer = (props) => {
   }
 
   return (
-    <ul className={`btb-react-list-layer layer-${props.iteration}`} style={getStyle(props.styleObj, ['btb-react-list-layer', `layer-${props.iteration}`])}>
+    <ul className={`btb-react-list-layer layer-${props.iteration}`} style={getStyle(env.styleObj, ['btb-react-list-layer', `layer-${props.iteration}`])}>
       {
         props.subdataList.map((entry) => {
           if (typeof entry.children != 'undefined') {
             return (
-              <li className="layer_container" style={getStyle(props.styleObj, ['layer_container'])} key={entry.id}>
-                <div className={classnames('container_entry', `entry-${entry.id}`, {'entry-collapsable' : env.collapseEnable}, {'entry-active' : env.state_activeID.value === entry.id})} style={{'paddingLeft' : `${props.iteration}rem`, ...getStyle(props.styleObj, ['container_entry', `entry-${entry.id}`, env.collapseEnable && 'entry-collapsable'||''])}} onClick={() => {_toggleCollapsed(entry);}}>
-                  <div className="entry_title" style={getStyle(props.styleObj, ['entry_title'])}>
+              <li className="layer_container" style={getStyle(env.styleObj, ['layer_container'])} key={entry.id}>
+                <div className={classnames('container_entry', `entry-${entry.id}`, {'entry-collapsable' : env.collapseEnable}, {'entry-active' : env.state_activeID.value === entry.id})} style={{'paddingLeft' : `${props.iteration}rem`, ...getStyle(env.styleObj, ['container_entry', `entry-${entry.id}`, env.collapseEnable && 'entry-collapsable'||''])}} onClick={() => {_toggleCollapsed(entry);}}>
+                  <div className="entry_title" style={getStyle(env.styleObj, ['entry_title'])}>
                     {(env.slotObj[entry.id])? (env.slotObj[entry.id]) : (entry.title)}
                   </div>
                   {
                     (env.collapseEnable)? 
                       (
-                        <div className={classnames('entry_collapseBtn', 'collapseBtn-default', {'collapseBtn-on' : env.state_collapsed.has(entry.id)})} style={getStyle(props.styleObj, ['entry_collapseBtn', 'collapseBtn-default', env.state_collapsed.has(entry.id) && 'collapseBtn-on' || ''])}>
-                          <div className="collapseBtn_arrow" style={getStyle(props.styleObj, ['collapseBtn_arrow'])}/>
+                        <div className={classnames('entry_collapseBtn', 'collapseBtn-default', {'collapseBtn-on' : env.state_collapsed.has(entry.id)})} style={getStyle(env.styleObj, ['entry_collapseBtn', 'collapseBtn-default', env.state_collapsed.has(entry.id) && 'collapseBtn-on' || ''])}>
+                          <div className="collapseBtn_arrow" style={getStyle(env.styleObj, ['collapseBtn_arrow'])}/>
                         </div>
                       ) : []
                   }
@@ -94,8 +94,8 @@ const ListLayer = (props) => {
                 {
                   (entry.children.length > 0) ?
                     (
-                      <div className="container_sublayer" id={`${entry.id}_sublayer`} style={getStyle(props.styleObj, ['container_sublayer'])} ref={_ref(`${entry.id}_sublayer`)}>
-                        <ListLayer subdataList={entry.children} styleObj={props.styleObj || {}} iteration={props.iteration + 1} updateLayerSize={(event) => _updateLayer(event, entry.id)}/>
+                      <div className="container_sublayer" id={`${entry.id}_sublayer`} style={getStyle(env.styleObj, ['container_sublayer'])} ref={_ref(`${entry.id}_sublayer`)}>
+                        <ListLayer subdataList={entry.children} iteration={props.iteration + 1} updateLayerSize={(event) => _updateLayer(event, entry.id)}/>
                       </div>
                     ) : []
                 }
@@ -103,9 +103,9 @@ const ListLayer = (props) => {
             );
           } else {
             return (
-              <li className="layer_container" style={getStyle(props.styleObj, ['layer_container'])} key={entry.id}>
-                <div className={classnames('container_entry', `entry-${entry.id}`, {'entry-active' : env.state_activeID.value === entry.id})} style={{'paddingLeft' : `${props.iteration}rem`, ...getStyle(props.styleObj, ['container_entry', `entry-${entry.id}`, (env.state_activeID.value === entry.id)? 'entry-active':''])}} onClick={() => {event.clickEntry(entry);}}>
-                  <div className="entry_title" style={getStyle(props.styleObj, ['entry_title'])}>
+              <li className="layer_container" style={getStyle(env.styleObj, ['layer_container'])} key={entry.id}>
+                <div className={classnames('container_entry', `entry-${entry.id}`, {'entry-active' : env.state_activeID.value === entry.id})} style={{'paddingLeft' : `${props.iteration}rem`, ...getStyle(env.styleObj, ['container_entry', `entry-${entry.id}`, (env.state_activeID.value === entry.id)? 'entry-active':''])}} onClick={() => {event.clickEntry(entry);}}>
+                  <div className="entry_title" style={getStyle(env.styleObj, ['entry_title'])}>
                     {(env.slotObj[entry.id])? (env.slotObj[entry.id]) : (entry.title)}
                   </div>
                 </div>

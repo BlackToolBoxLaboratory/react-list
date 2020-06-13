@@ -9,6 +9,7 @@ const List = (props) => {
   const env = {
     state_activeID : useActiveState(),
     collapseEnable : props.collapseEnable || false,
+    styleObj       : props.styleObj || {},
     slotObj        : props.slotObj || {}
   };
   const event = {
@@ -40,8 +41,8 @@ const List = (props) => {
   return (
     <EnvContext.Provider value={env}>
       <EventContext.Provider value={event}>
-        <div className={['btb-react-list', props.className].join(' ')} style={getStyle(props.styleObj, ['btb-react-list'])}>
-          <ListLayer subdataList={props.dataList} activeID={env.state_activeID.value} styleObj={props.styleObj || {}} iteration={0}/>
+        <div className={['btb-react-list', props.className].join(' ')} style={getStyle(env.styleObj, ['btb-react-list'])}>
+          <ListLayer subdataList={props.dataList || []} iteration={0}/>
         </div>
       </EventContext.Provider>
     </EnvContext.Provider>
@@ -58,8 +59,4 @@ function useActiveState(defaultSate) {
   };
 }
 
-export {
-  List as default,
-  EnvContext,
-  EventContext
-};
+export default List;
