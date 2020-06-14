@@ -1,3 +1,9 @@
+## v2.1.5
+
+> Jun, 14, 2020
+
+- **Issue**: Fix bug for defaultCollapsed.
+
 ## v2.1.4
 
 > Jun, 14, 2020

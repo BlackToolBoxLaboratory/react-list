@@ -5,23 +5,28 @@ import getStyle from '../utils/getStyle.js';
 import { EnvContext, EventContext } from '../utils/useContext.js';
 
 const ListLayer = (props) => {
+  let result = [];
+  props.subdataList.map((entry) => {
+    if (entry.defaultCollapsed === true)
+    {
+      result.push(entry.id);
+    }
+  });
+    
   const refs = {};
   const env = {
     ...useContext(EnvContext),
-    state_collapsed : useCollapseState([])
+    state_collapsed : useCollapseState(result)
   };
   const event = useContext(EventContext);
 
   useEffect(() => {
+    let state;
     props.subdataList.map((entry) => {
       if (entry.children) {
-        let node = refs[`${entry.id}_sublayer`].current;
-        if (env.collapseEnable && entry.defaultCollapsed === true) {
-          node.style.maxHeight = `0px`;
-          _toggleCollapsed(entry, 'hide');
-        } else {
-          node.style.maxHeight = `${Math.ceil(node.scrollHeight)}px`;
-        }
+        state = (env.collapseEnable && entry.defaultCollapsed === true)? 'hide' : 'show';
+        event.toggleCollapsed(entry, state);
+        _resizeLayer(entry.id, state);
       }
     });
   }, []);
@@ -38,7 +43,7 @@ const ListLayer = (props) => {
     }
 
     let state = (type)? type : (env.state_collapsed.has(entry.id))? 'show':'hide';
-    event.toggleCollapsed(entry, type);
+    event.toggleCollapsed(entry, state);
     env.state_collapsed.onChange(entry.id, state);
     _resizeLayer(entry.id, state);
   }
