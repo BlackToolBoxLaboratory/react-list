@@ -1,3 +1,9 @@
+## v2.1.4
+
+> Jun, 14, 2020
+
+- **Issue**: Add entry data as props for slot.
+
 ## v2.1.3
 
 > Jun, 13, 2020

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import classnames from 'classnames';
 
 import ListLayer from './ListLayer.jsx';
 
@@ -41,7 +42,7 @@ const List = (props) => {
   return (
     <EnvContext.Provider value={env}>
       <EventContext.Provider value={event}>
-        <div className={['btb-react-list', props.className].join(' ')} style={getStyle(env.styleObj, ['btb-react-list'])}>
+        <div className={classnames('btb-react-list', props.className)} style={getStyle(env.styleObj, ['btb-react-list'])}>
           <ListLayer subdataList={props.dataList || []} iteration={0}/>
         </div>
       </EventContext.Provider>
