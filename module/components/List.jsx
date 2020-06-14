@@ -4,13 +4,14 @@ import classnames from 'classnames';
 import ListLayer from './ListLayer.jsx';
 
 import getStyle from '../utils/getStyle.js';
+import formatCamelCase from '../utils/formatCamelCase.js';
 import { EnvContext, EventContext } from '../utils/useContext.js';
 
 const List = (props) => {
   const env = {
     state_activeID : useActiveState(),
     collapseEnable : props.collapseEnable || false,
-    styleObj       : props.styleObj || {},
+    styleObj       : formatCamelCase(props.styleObj || {}),
     slotObj        : props.slotObj || {}
   };
   const event = {

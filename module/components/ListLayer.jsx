@@ -83,7 +83,7 @@ const ListLayer = (props) => {
           if (typeof entry.children != 'undefined') {
             return (
               <li className="layer_container" style={getStyle(env.styleObj, ['layer_container'])} key={entry.id}>
-                <div className={classnames('container_entry', `entry-${entry.id}`, {'entry-collapsable' : env.collapseEnable}, {'entry-active' : env.state_activeID.value === entry.id})} style={{'paddingLeft' : `${props.iteration}rem`, ...getStyle(env.styleObj, ['container_entry', `entry-${entry.id}`, env.collapseEnable && 'entry-collapsable'||''])}} onClick={() => {_toggleCollapsed(entry);}}>
+                <div className={classnames('container_entry', `entry-${entry.id}`, {'entry-collapsable' : env.collapseEnable}, {'entry-active' : env.state_activeID.value === entry.id})} style={{'paddingLeft' : `${props.iteration}rem`, ...getStyle(env.styleObj, ['container_entry', `entry-${entry.id}`, env.collapseEnable && 'entry-collapsable'||'', (env.state_activeID.value === entry.id)? 'entry-active':''])}} onClick={() => {_toggleCollapsed(entry);}}>
                   <div className="entry_title" style={getStyle(env.styleObj, ['entry_title'])}>
                     {(env.slotObj[entry.id])? ((typeof env.slotObj[entry.id] == 'function')? env.slotObj[entry.id](entry) : env.slotObj[entry.id]) : (entry.title)}
                   </div>

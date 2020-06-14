@@ -1,3 +1,9 @@
+## v2.1.6
+
+> Jun, 14, 2020
+
+- **Issue**: Add formatCamelCase for inline style.
+
 ## v2.1.5
 
 > Jun, 14, 2020
