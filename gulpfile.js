@@ -1,8 +1,12 @@
-var gulp = require('gulp')
+const gulp = require('gulp')
+const del = require('del')
 
-const path_backup = '../codebase/vue-list'
+const path_backup = '../codebase/react-list'
 
-gulp.task('backup', function(done){
+gulp.task('backup', async function(done){
+  /* clean files */
+  await del([path_backup + '/'], {force: true})
+
   /* module */
   gulp.src(['module/**/*'])
     .pipe(gulp.dest(path_backup + '/module/'))
