@@ -7,7 +7,7 @@ import getStyle from '../utils/getStyle.js';
 import formatCamelCase from '../utils/formatCamelCase.js';
 import { EnvContext, EventContext } from '../utils/useContext.js';
 
-const List = (props) => {
+const List = React.forwardRef((props, ref) => {
   const env = {
     state_activeID : useActiveState(),
     collapseEnable : props.collapseEnable || false,
@@ -36,20 +36,22 @@ const List = (props) => {
     if (typeof props.activeID != 'undefined')
     {
       if (env.state_activeID.value !== props.activeID)
+      {
         env.state_activeID.onChange(props.activeID);
+      }
     }
   });
 
   return (
     <EnvContext.Provider value={env}>
       <EventContext.Provider value={event}>
-        <div className={classnames('btb-react-list', props.className)} style={getStyle(env.styleObj, ['btb-react-list'])}>
+        <div ref={ref} className={classnames('btb-react-list', props.className)} style={getStyle(env.styleObj, ['btb-react-list'])}>
           <ListLayer subdataList={props.dataList || []} iteration={0}/>
         </div>
       </EventContext.Provider>
     </EnvContext.Provider>
   );
-};
+});
 
 function useActiveState(defaultSate) {
   const [value, setState] = useState(defaultSate);
