@@ -22,4 +22,4 @@ Please file [issue](https://github.com/BlackToolBoxLaboratory/react-list/issues)
 
 # Homepage
 
-You can see the document website [on-line](https://blacktoolboxlaboratory.github.io/react/v2/#/packages/list/).
+You can see the document website [on-line](https://blacktoolboxlaboratory.github.io/react/v2/#/packages/list/basic).
