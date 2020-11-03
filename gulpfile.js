@@ -12,6 +12,7 @@ gulp.task('backup', async function(done){
     .pipe(gulp.dest(path_backup + '/module/'))
   /* others */
   gulp.src([
+    '.babelrc',
     '.eslintrc.js',
     '.gitignore',
     'LICENSE',
