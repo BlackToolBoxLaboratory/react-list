@@ -1,7 +1,7 @@
 {
   "name": "@blacktoolbox/react-list",
   "packageName": "btblab-react-list",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "List / Menu maker based on React",
   "main": "lib/index.js",
   "module": "esm/index.js",

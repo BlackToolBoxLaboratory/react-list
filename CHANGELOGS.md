@@ -1,3 +1,9 @@
+## v2.3,0
+
+> Sep, 12, 2022
+
+- **Minor**: Support to use href for menu link.
+
 ## v2.2.1
 
 > Aug, 21, 2022

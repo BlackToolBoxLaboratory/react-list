@@ -5,11 +5,12 @@
   .layer_container {
     list-style: none;
   }
+
   .container_entry {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width:100%;
+    width: 100%;
 
     &.entry-collapsable {
       cursor: pointer;
@@ -17,7 +18,14 @@
 
     .entry_title {
       flex-grow: 1;
+
+      .title_link {
+        color: inherit;
+        text-decoration: inherit;
+        background: inherit;
+      }
     }
+
     .entry_collapseBtn {
       flex-shrink: 0;
 
@@ -43,6 +51,7 @@
       }
     }
   }
+
   .container_sublayer {
     overflow: hidden;
     transition: max-height .5s ease 0s;
