@@ -1,3 +1,9 @@
+## v2.3,1
+
+> Feb, 21, 2023
+
+- **Issue**: Adjust css of title_link.
+
 ## v2.3,0
 
 > Sep, 12, 2022
